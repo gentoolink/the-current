@@ -17,7 +17,12 @@
           <svg class="logo-mark" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="4" fill="currentColor" opacity="0.12"/><path d="M7 21L14 7L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.5 16H18.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
           Automate Mission <span>/ AI Trends</span>
         </a>
-        <nav>
+        <button class="menu-toggle" aria-label="Menu" onclick="toggleMenu()">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+            <path d="M3 6h16M3 11h16M3 16h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </button>
+        <nav class="nav-desktop">
           <ul class="nav">
             <li><a href="index.html">Articles</a></li>
             <li><a href="category.html?cat=ai">AI</a></li>
@@ -133,6 +138,21 @@
       </div>
     </div>
   </footer>
+
+
+<script>
+    function toggleMenu() {
+      var nav = document.getElementById('mobileNav');
+      nav.classList.toggle('open');
+    }
+    document.addEventListener('click', function(e) {
+      var nav = document.getElementById('mobileNav');
+      var toggle = document.querySelector('.menu-toggle');
+      if (!nav.contains(e.target) && !toggle.contains(e.target)) {
+        nav.classList.remove('open');
+      }
+    });
+  </script>
 
 </body>
 </html>

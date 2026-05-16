@@ -22,7 +22,12 @@
           </svg>
           Automate Mission <span>/ AI Trends</span>
         </a>
-        <nav>
+        <button class="menu-toggle" aria-label="Menu" onclick="toggleMenu()">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+            <path d="M3 6h16M3 11h16M3 16h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </button>
+        <nav class="nav-desktop">
           <ul class="nav">
             <li><a href="index.html" class="active">Articles</a></li>
             <li><a href="category.html?cat=ai">AI</a></li>
@@ -35,6 +40,17 @@
     </div>
     <div class="header-accent"></div>
   </header>
+
+  <!-- MOBILE NAV -->
+  <div class="mobile-nav" id="mobileNav">
+    <ul>
+      <li><a href="index.html">Articles</a></li>
+      <li><a href="category.html?cat=ai">AI</a></li>
+      <li><a href="category.html?cat=ml">ML</a></li>
+      <li><a href="category.html?cat=tools">Tools</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </div>
 
   <main>
 
@@ -211,5 +227,18 @@
     </div>
   </footer>
 
+<script>
+    function toggleMenu() {
+      var nav = document.getElementById('mobileNav');
+      nav.classList.toggle('open');
+    }
+    document.addEventListener('click', function(e) {
+      var nav = document.getElementById('mobileNav');
+      var toggle = document.querySelector('.menu-toggle');
+      if (!nav.contains(e.target) && !toggle.contains(e.target)) {
+        nav.classList.remove('open');
+      }
+    });
+  </script>
 </body>
 </html>
