@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Articles — The Current</title>
+  <meta name="description" content="Honest analysis of artificial intelligence trends.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%23D97706'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-size='20' fill='white' font-family='serif' font-weight='700'>C</text></svg>">
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const cat = params.get('cat') || 'all';
+    const titles = {
+      ai: 'Artificial Intelligence',
+      ml: 'Machine Learning',
+      tools: 'Tools & Systems',
+      analysis: 'Analysis'
+    };
+    document.title = (titles[cat] || 'All Articles') + ' — The Current';
+  </script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="index.html" class="logo">
+          <svg class="logo-mark" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="4" fill="currentColor" opacity="0.12"/><path d="M7 21L14 7L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.5 16H18.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          The Current <span>/ AI Trends</span>
+        </a>
+        <nav>
+          <ul class="nav">
+            <li><a href="index.html">Articles</a></li>
+            <li><a href="category.html?cat=ai">AI</a></li>
+            <li><a href="category.html?cat=ml">ML</a></li>
+            <li><a href="category.html?cat=tools">Tools</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="header-accent"></div>
+  </header>
+
+  <section class="category-header">
+    <div class="container">
+      <span class="hero-tag" id="cat-tag">All Articles</span>
+      <h1 id="cat-title">Everything we've published</h1>
+      <p id="cat-desc">All articles, sorted by most recent.</p>
+    </div>
+  </section>
+
+  <section class="articles-section">
+    <div class="container">
+      <div class="articles-grid" id="article-grid">
+        <!-- Articles injected by JS -->
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <svg class="logo-mark" viewBox="0 0 28 28" fill="none" style="width:24px;height:24px"><rect width="28" height="28" rx="4" fill="currentColor" opacity="0.12"/><path d="M7 21L14 7L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.5 16H18.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            The Current
+          </a>
+          <p>Honest analysis of artificial intelligence trends. No hype, no fluff.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Topics</h4>
+          <ul>
+            <li><a href="category.html?cat=ai">Artificial Intelligence</a></li>
+            <li><a href="category.html?cat=ml">Machine Learning</a></li>
+            <li><a href="category.html?cat=tools">Tools &amp; Systems</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Site</h4>
+          <ul>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 The Current. All rights reserved.</span>
+        <span>automatemission.com</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const articles = [
+      {
+        cat: 'analysis', catLabel: 'Analysis',
+        url: 'article-why-ai-code-review.html',
+        title: 'Why AI Code Review Is Still a Human Job',
+        date: 'May 14, 2026', readTime: '6'
+      },
+      {
+        cat: 'ai', catLabel: 'AI',
+        url: 'article-open-weights-vs-open-source.html',
+        title: 'The Real Difference Between Open Source and Open Weights AI Models',
+        date: 'May 12, 2026', readTime: '5'
+      },
+      {
+        cat: 'ml', catLabel: 'ML',
+        url: 'article-multi-token-prediction.html',
+        title: 'How Multi-Token Prediction Changes What LLMs Can Do',
+        date: 'May 10, 2026', readTime: '7'
+      },
+      {
+        cat: 'tools', catLabel: 'Tools',
+        url: 'article-local-ai-month.html',
+        title: "Five Things I Learned Running Local AI Models for a Month",
+        date: 'May 7, 2026', readTime: '8'
+      },
+      {
+        cat: 'analysis', catLabel: 'Analysis',
+        url: 'article-harness-engineering.html',
+        title: "The Harness Engineering Trend Nobody Is Talking About",
+        date: 'May 3, 2026', readTime: '5'
+      }
+    ];
+
+    const params = new URLSearchParams(window.location.search);
+    const cat = params.get('cat');
+    const titles = {
+      ai: { label: 'Artificial Intelligence', desc: 'Models, research, and the state of AI capability.' },
+      ml: { label: 'Machine Learning', desc: 'Technical deep dives into how ML systems work.' },
+      tools: { label: 'Tools & Systems', desc: 'Practical writing about building with AI.' },
+      analysis: { label: 'Analysis', desc: 'Honest takes on what AI developments actually mean.' }
+    };
+
+    if (cat && titles[cat]) {
+      document.getElementById('cat-tag').textContent = titles[cat].label;
+      document.getElementById('cat-title').textContent = titles[cat].label;
+      document.getElementById('cat-desc').textContent = titles[cat].desc;
+    }
+
+    const filtered = cat ? articles.filter(a => a.cat === cat) : articles;
+    const grid = document.getElementById('article-grid');
+
+    filtered.forEach(article => {
+      grid.innerHTML += `
+        <article class="article-card fade-up">
+          <a href="${article.url}" class="card-tag">${article.catLabel}</a>
+          <h3 class="card-title"><a href="${article.url}">${article.title}</a></h3>
+          <div class="card-meta">
+            <span>${article.date}</span>
+            <div style="width:1px;height:10px;background:var(--border)"></div>
+            <span class="reading-time">
+              <svg viewBox="0 0 16 16" fill="none" style="width:14px;height:14px"><circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.5"/><path d="M8 4.5V8.5L10.5 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              ${article.readTime} min
+            </span>
+          </div>
+        </article>
+      `;
+    });
+  </script>
+
+</body>
+</html>

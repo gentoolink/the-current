@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Why AI Code Review Is Still a Human Job — The Current</title>
+  <meta name="description" content="AI tools write code faster than any developer. But shipping software requires judgment calls that AI consistently gets wrong.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23F59E0B' width='100' height='100' rx='12'/><text y='.9em' x='50%' text-anchor='middle' font-size='70' fill='white'>C</text></svg>">
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="index.html" class="logo">
+          <span class="logo-text">The<span class="logo-accent">.</span>Current</span>
+          <span class="logo-tagline">AI Trends & Analysis</span>
+        </a>
+        <nav class="main-nav">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="category.html?cat=ai" class="nav-link">AI</a>
+          <a href="category.html?cat=ml" class="nav-link">ML</a>
+          <a href="category.html?cat=tools" class="nav-link">Tools</a>
+          <a href="about.html" class="nav-link">About</a>
+        </nav>
+        <button class="menu-toggle" aria-label="Toggle menu">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Article Page -->
+  <main class="article-page">
+    <div class="container">
+      <article>
+        <!-- Article Header -->
+        <header class="article-header animate-in">
+          <span class="category-tag">Analysis</span>
+          <h1 class="article-title">Why AI Code Review Is Still a Human Job</h1>
+          <p class="article-subtitle">AI tools write code faster than any developer. But shipping software requires judgment calls that AI consistently gets wrong.</p>
+          
+          <div class="article-meta">
+            <div class="article-meta-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+              <span>May 12, 2026</span>
+            </div>
+            <div class="article-meta-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              <span>8 min read</span>
+            </div>
+            <div class="article-meta-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+              <span>Marcus Chen</span>
+            </div>
+          </div>
+        </header>
+
+        <!-- Hero Image -->
+        <div class="article-hero-image animate-in animate-delay-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 386" fill="none">
+            <rect width="900" height="386" fill="#F5F5F0"/>
+            <rect x="50" y="40" width="800" height="306" rx="8" fill="#EFEFEA"/>
+            <!-- Code review visual -->
+            <rect x="100" y="80" width="300" height="220" rx="6" fill="#FAFAF8" stroke="#E5E5E0" stroke-width="2"/>
+            <rect x="120" y="100" width="150" height="12" rx="3" fill="#E5E5E0"/>
+            <rect x="120" y="122" width="220" height="10" rx="3" fill="#E5E5E0"/>
+            <rect x="120" y="142" width="180" height="10" rx="3" fill="#E5E5E0"/>
+            <rect x="120" y="170" width="100" height="24" rx="4" fill="#F59E0B" opacity="0.2"/>
+            <rect x="120" y="202" width="260" height="10" rx="3" fill="#E5E5E0"/>
+            <rect x="120" y="222" width="140" height="10" rx="3" fill="#E5E5E0"/>
+            <!-- AI suggesting -->
+            <rect x="500" y="80" width="300" height="220" rx="6" fill="#FAFAF8" stroke="#E5E5E0" stroke-width="2"/>
+            <circle cx="540" cy="120" r="16" fill="#F59E0B"/>
+            <text x="540" y="125" text-anchor="middle" font-size="12" fill="white" font-weight="bold">AI</text>
+            <rect x="570" y="108" width="180" height="24" rx="4" fill="#F59E0B" opacity="0.15"/>
+            <rect x="570" y="142" width="200" height="10" rx="3" fill="#E5E5E0"/>
+            <rect x="570" y="162" width="160" height="10" rx="3" fill="#E5E5E0"/>
+            <rect x="570" y="190" width="80" height="20" rx="4" fill="#EF4444" opacity="0.2"/>
+            <rect x="570" y="220" width="190" height="10" rx="3" fill="#E5E5E0"/>
+            <!-- X mark for incorrect -->
+            <text x="810" y="200" font-size="48" fill="#EF4444" opacity="0.4">✗</text>
+          </svg>
+        </div>
+
+        <!-- Article Body -->
+        <div class="article-body animate-in animate-delay-2">
+          <p>I've been watching AI code generation tools improve for three years now. The speed is genuinely remarkable—these systems can produce more correct syntax in five seconds than most developers can write in an hour. But speed isn't the hard problem in software development. Judgment is.</p>
+
+          <p>When I look at code reviews, I see two distinct activities that get conflated. There's checking whether code works—whether it compiles, whether the logic is sound, whether tests pass. And then there's determining whether code should exist at all.</p>
+
+          <h2>The Gap AI Bridges—and the Gap It Doesn't</h2>
+
+          <p>AI has gotten genuinely good at the first kind of review. Static analysis catches obvious bugs. AI systems can spot common vulnerabilities, verify test coverage, check for naming conventions. This is useful. Teams should use these tools.</p>
+
+          <p>But the second kind of review—what I think of as the "should this code exist" question—requires something AI fundamentally lacks: understanding of context that doesn't exist in the code itself.</p>
+
+          <blockquote>
+            <p>"The AI doesn't know that this function is technical debt we've been deferring for six months. It doesn't know that our CEO promised this feature to a major client last week. It doesn't know that we're planning to replace this entire module next quarter."
+            </p>
+            <cite>— Senior engineer at a Series B startup</cite>
+          </blockquote>
+
+          <p>Let me give you a concrete example. Last month, an AI system flagged a function as "inefficient" and suggested a more elegant O(log n) replacement for what it saw as an O(n²) operation. The suggestion was technically correct. It was also wrong.</p>
+
+          <p>The original code ran once per day on a dataset of 50 items. The "optimized" version would require a complete architectural overhaul because it assumed data was sorted, which our system doesn't guarantee. The AI didn't know this because this assumption existed in the heads of three engineers who built the system over two years—no documentation, no comments, just institutional knowledge.</p>
+
+          <div class="pull-quote">
+            <p>The AI didn't know this because this assumption existed in the heads of three engineers who built the system over two years.</p>
+          </div>
+
+          <h2>What Actually Happens in Code Review</h2>
+
+          <p>Good code review is about tradeoffs. Every piece of code represents a set of explicit or implicit decisions:</p>
+
+          <ul>
+            <li>This is the approach we chose because the alternative would have taken twice as long</li>
+            <li>We kept this simple because we expect to replace it soon anyway</li>
+            <li>This comment exists because the original author knew this would confuse people</li>
+            <li>We're accepting this tech debt because the business can't wait for the right solution</li>
+          </ul>
+
+          <p>None of this context lives in pull requests. It lives in Slack threads, in planning documents, in conversations that happened two years ago. An AI reviewing code sees a snapshot, not a history.</p>
+
+          <h2>The Specific Failure Modes</h2>
+
+          <h3>1. False positives that derail priorities</h3>
+
+          <p>AI systems are conservative. They'd rather flag something as a problem that isn't one than miss a real issue. In code review, this manifests as a flood of "suggestions" that range from pedantic to actively harmful.</p>
+
+          <p>I've seen teams spend more time explaining why they <em>aren't</em> implementing AI suggestions than they would have spent writing the original code. The AI doesn't know that you already considered its suggestion and rejected it for reasons it can't see.</p>
+
+          <h3>2. Style debates that don't matter</h3>
+
+          <p>AI has strong opinions about formatting, naming conventions, and patterns. These opinions aren't wrong, exactly, but they're arbitrary. A human reviewer might push back on a naming choice because it conflicts with existing codebase conventions. AI pushes back on everything equally, which means nothing gets prioritized.</p>
+
+          <h3>3. Missing the forest for the trees</h3>
+
+          <p>AI reviews code at the function level. It doesn't naturally see system-level problems. It won't notice that two pieces of code you're reviewing are duplicating something that already exists in another service. It won't catch that the architectural pattern you're using doesn't fit your team's actual deployment constraints.</p>
+
+          <h2>What I Actually Use AI For</h2>
+
+          <p>I'm not arguing against AI in the development workflow. I'm arguing against AI as a replacement for human judgment in code review. Here's what I think AI is genuinely good for:</p>
+
+          <ol>
+            <li><strong>Catching obvious bugs before human review.</strong> Run AI analysis before the PR goes to review. Catch the things that are objectively wrong.</li>
+            <li><strong>Security scanning.</strong> AI is actually better than most humans at catching common security patterns. Use it for this.</li>
+            <li><strong>Documentation checks.</strong> Did you forget to update the README? Did the API docs drift from the implementation? AI catches this.</li>
+            <li><strong>Boilerplate validation.</strong> Making sure error handling exists, logging is in place, tests cover the happy path.</li>
+          </ol>
+
+          <p>What I don't use AI for: any judgment call. Whether code should exist. Whether the approach makes sense. Whether the tradeoff being made is the right one.</p>
+
+          <h2>The Honest Take</h2>
+
+          <p>AI code review tools are useful. They're also oversold. The pitch is often "never miss a bug again" or "automate your code review process." The reality is that the most valuable things that happen in code review have nothing to do with what AI can evaluate.</p>
+
+          <p>Code review is where teams align on direction. Where knowledge transfers. Where junior engineers learn to think like senior engineers. Where architectural decisions get made incrementally. None of this is automatable with current AI technology, because none of it exists in the code itself.</p>
+
+          <p>Use AI to catch the catchable. Trust humans to make the calls that require judgment. The tools that try to replace human code review aren't there yet—and might never be, because the job was never really about the code.</p>
+
+          <div class="key-takeaways">
+            <div class="key-takeaways-header">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                <polyline points="22 4 12 14.01 9 11.01"/>
+              </svg>
+              Key Takeaways
+            </div>
+            <ul>
+              <li>AI code review works well for catching bugs, security issues, and documentation drift—things that exist explicitly in the code</li>
+              <li>AI cannot evaluate context: business constraints, team history, architectural plans that don't exist in the PR</li>
+              <li>The most valuable code review conversations—tradeoffs, direction, knowledge transfer—require human judgment</li>
+              <li>Use AI to pre-filter obvious issues, then trust your team for everything that requires judgment</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Article Footer -->
+        <footer class="article-footer">
+          <div class="article-tags">
+            <a href="category.html?cat=ai" class="article-tag">AI</a>
+            <a href="category.html?cat=tools" class="article-tag">Tools</a>
+            <a href="#" class="article-tag">Software Development</a>
+            <a href="#" class="article-tag">Opinion</a>
+          </div>
+          
+          <div class="share-section">
+            <span class="share-label">Share this article:</span>
+            <div class="share-buttons">
+              <a href="#" class="share-btn" aria-label="Share on Twitter">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/>
+                </svg>
+              </a>
+              <a href="#" class="share-btn" aria-label="Share on LinkedIn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                  <rect x="2" y="9" width="4" height="12"/>
+                  <circle cx="4" cy="4" r="2"/>
+                </svg>
+              </a>
+              <a href="#" class="share-btn" aria-label="Copy link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+                  <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </footer>
+      </article>
+    </div>
+  </main>
+
+  <!-- Related Articles -->
+  <section class="related-articles">
+    <div class="container">
+      <h2>Related Articles</h2>
+      <div class="related-grid">
+        <article class="article-card">
+          <a href="article-2.html" class="article-card-image">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 338" fill="none">
+              <rect width="600" height="338" fill="#F5F5F0"/>
+              <circle cx="200" cy="169" r="80" fill="#EFEFEA" stroke="#D5D5D0" stroke-width="2"/>
+              <rect x="165" y="149" width="70" height="40" rx="4" fill="#E5E5E0"/>
+              <circle cx="200" cy="169" r="15" fill="#F59E0B"/>
+              <circle cx="400" cy="169" r="80" fill="#EFEFEA" stroke="#D5D5D0" stroke-width="2"/>
+              <rect x="365" y="149" width="70" height="40" rx="4" fill="#E5E5E0"/>
+              <circle cx="400" cy="169" r="15" fill="#1A1A1A"/>
+            </svg>
+          </a>
+          <div class="article-card-content">
+            <div class="article-card-category">
+              <span class="category-tag">Explainer</span>
+            </div>
+            <h3 class="article-card-title">
+              <a href="article-2.html">The Real Difference Between Open Source and Open Weights AI Models</a>
+            </h3>
+            <div class="article-card-meta">
+              <span>6 min read</span>
+              <span>May 8, 2026</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="article-card">
+          <a href="article-4.html" class="article-card-image">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 338" fill="none">
+              <rect width="600" height="338" fill="#F5F5F0"/>
+              <rect x="175" y="80" width="250" height="178" rx="8" fill="#EFEFEA" stroke="#E5E5E0" stroke-width="2"/>
+              <rect x="195" y="100" width="210" height="120" rx="4" fill="#FAFAF8"/>
+              <rect x="205" y="115" width="80" height="8" rx="2" fill="#E5E5E0"/>
+              <rect x="205" y="130" width="120" height="8" rx="2" fill="#E5E5E0"/>
+              <rect x="205" y="145" width="60" height="8" rx="2" fill="#F59E0B" opacity="0.5"/>
+              <rect x="205" y="160" width="100" height="8" rx="2" fill="#E5E5E0"/>
+            </svg>
+          </a>
+          <div class="article-card-content">
+            <div class="article-card-category">
+              <span class="category-tag">Personal</span>
+            </div>
+            <h3 class="article-card-title">
+              <a href="article-4.html">Five Things I Learned Running Local AI Models for a Month</a>
+            </h3>
+            <div class="article-card-meta">
+              <span>7 min read</span>
+              <span>May 1, 2026</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="article-card">
+          <a href="article-5.html" class="article-card-image">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 338" fill="none">
+              <rect width="600" height="338" fill="#F5F5F0"/>
+              <path d="M300 80 L300 180" stroke="#E5E5E0" stroke-width="8" stroke-linecap="round"/>
+              <circle cx="300" cy="220" r="40" fill="#EFEFEA" stroke="#F59E0B" stroke-width="3"/>
+              <path d="M260 180 Q 220 120 180 100" stroke="#E5E5E0" stroke-width="6" stroke-linecap="round" fill="none"/>
+              <path d="M340 180 Q 380 120 420 100" stroke="#E5E5E0" stroke-width="6" stroke-linecap="round" fill="none"/>
+              <circle cx="180" cy="100" r="20" fill="#F59E0B" opacity="0.3"/>
+              <circle cx="420" cy="100" r="20" fill="#F59E0B" opacity="0.3"/>
+            </svg>
+          </a>
+          <div class="article-card-content">
+            <div class="article-card-category">
+              <span class="category-tag">Opinion</span>
+            </div>
+            <h3 class="article-card-title">
+              <a href="article-5.html">The Harness Engineering Trend Nobody Is Talking About</a>
+            </h3>
+            <div class="article-card-meta">
+              <span>5 min read</span>
+              <span>April 28, 2026</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo-text">The<span style="color: var(--accent);">.</span>Current</div>
+          <p>Straight-forward analysis of AI trends and machine learning developments. No hype, no "revolutionary" claims—just clear thinking about what matters.</p>
+        </div>
+        <nav class="footer-nav">
+          <h4>Categories</h4>
+          <ul>
+            <li><a href="category.html?cat=ai">AI Trends</a></li>
+            <li><a href="category.html?cat=ml">Machine Learning</a></li>
+            <li><a href="category.html?cat=tools">Tools & Systems</a></li>
+            <li><a href="category.html?cat=analysis">Analysis</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-nav">
+          <h4>Pages</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-nav">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="#">RSS Feed</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">LinkedIn</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 The Current. All rights reserved.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Twitter">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/>
+            </svg>
+          </a>
+          <a href="#" aria-label="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+              <rect x="2" y="9" width="4" height="12"/>
+              <circle cx="4" cy="4" r="2"/>
+            </svg>
+          </a>
+          <a href="#" aria-label="RSS">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 11a9 9 0 0 1 9 9"/>
+              <path d="M4 4a16 16 0 0 1 16 16"/>
+              <circle cx="5" cy="19" r="1"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Five Things I Learned Running Local AI Models for a Month — The Current</title>
+  <meta name="description" content="I ran everything locally for 30 days — code generation, document drafting, research synthesis. No API bills, no data leaving my machine. Here's what actually held up.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%23D97706'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-size='20' fill='white' font-family='serif' font-weight='700'>C</text></svg>">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="index.html" class="logo">
+          <svg class="logo-mark" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="4" fill="currentColor" opacity="0.12"/><path d="M7 21L14 7L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.5 16H18.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          The Current <span>/ AI Trends</span>
+        </a>
+        <nav>
+          <ul class="nav">
+            <li><a href="index.html">Articles</a></li>
+            <li><a href="category.html?cat=ai">AI</a></li>
+            <li><a href="category.html?cat=ml">ML</a></li>
+            <li><a href="category.html?cat=tools">Tools</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="header-accent"></div>
+  </header>
+
+  <header class="article-header">
+    <div class="container--narrow">
+      <a href="category.html?cat=tools" class="category-pill">Tools</a>
+      <h1 class="article-title">Five Things I Learned Running Local AI Models for a Month</h1>
+      <p class="article-subtitle">I ran everything locally for 30 days — code generation, document drafting, research synthesis. No API bills, no data leaving my machine. Here's what actually held up.</p>
+      <div class="byline">
+        <span class="byline-name">The Current</span>
+        <div class="byline-dot"></div>
+        <span>May 7, 2026</span>
+        <div class="byline-dot"></div>
+        <span class="reading-time">
+          <svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.5"/><path d="M8 4.5V8.5L10.5 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          8 min read
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <article class="article-body">
+    <div class="container--narrow">
+
+      <p>Every AI product discussion I had for the past year ended the same way: "But have you tried running it locally?" So I did. For one month, I ran as much of my personal work through local models as I could. Code generation, document drafting, email responses, research synthesis, brainstorming. No API calls. No data leaving my machine. Here's what the experience actually taught me.</p>
+
+      <h2>1. Code Generation Is the Strongest Use Case — For Now</h2>
+
+      <p>The local models I ran for code — particularly code completion and small refactoring tasks — were genuinely good. Not as good as the best API models for complex architectural decisions, but competitive for the kinds of routine work that makes up a significant portion of actual coding: writing boilerplate, explaining unfamiliar codebases, generating tests for well-defined functions.</p>
+
+      <p>What surprised me was how much I stopped waiting. With a local model, there's no round-trip to a remote server. The latency is measured in milliseconds. For code autocomplete — where a 2-second delay destroys flow — this matters more than raw capability.</p>
+
+      <blockquote>
+        Local code models are like having a very fast junior developer who knows the standard library but occasionally hallucinates API signatures.
+      </blockquote>
+
+      <h2>2. Writing Assistance Reveals Model Tier Very Quickly</h2>
+
+      <p>I expected local models to struggle with nuanced writing tasks. What I didn't expect was how clearly the capability gradient would show up. The gap between a 7-billion parameter model and a 34-billion parameter model on writing tasks was substantial — not just in output quality, but in the kind of reasoning that writing requires: understanding register, audience, intent, and structure simultaneously.</p>
+
+      <p>For short-form writing — emails, Slack messages, quick summaries — the small models were fine. For anything requiring genuine argument construction or extended narrative coherence, I consistently reached for the larger models. The API models still held a clear advantage here.</p>
+
+      <h2>3. Privacy Is Real But Needs Context</h2>
+
+      <p>The privacy argument for local models is legitimate but often oversimplified. Yes, your data doesn't go to a third-party server. But "local" doesn't mean "private by default." If you're running a model from a third-party repository, that model may have been trained on data you wouldn't want in your workflow. The weights are yours, but the training history isn't transparent.</p>
+
+      <p>What local running genuinely does give you is control over the inference environment. You can air-gap it. You can audit the running process. You can ensure no logs are transmitted. For certain threat models, this matters a great deal. For others, it's theater.</p>
+
+      <h2>4. Hardware Constraints Shape What "Works" Means</h2>
+
+      <p>My setup has 32GB of RAM and a decent mid-range GPU with 12GB VRAM. This is enough to run useful models, but it imposes constant tradeoffs. A 14-billion parameter model fits comfortably. A 34-billion parameter model requires quantization that degrades quality. Running the largest models means swapping to CPU with unacceptable latency.</p>
+
+      <p>The most important variable isn't the model size — it's the quality of quantization. A well-quantized 7B model outperforms a poorly quantized 14B model consistently. Understanding GGUF format and choosing the right quantization level is a meaningful investment of time that the API-first experience doesn't require.</p>
+
+      <h2>5. The Right Answer Is a Hybrid Setup</h2>
+
+      <p>After a month, the conclusion I landed on isn't "local vs API" — it's when to use which. Local models for everything latency-sensitive, privacy-sensitive, and routine. API models for high-complexity tasks where model quality is the bottleneck. The total cost of running local hardware plus occasional API calls was lower than pure API usage for my workload, with better privacy properties.</p>
+
+      <p>The tooling for this is still rough. Switching between local and API requires context switches that break flow. But the models themselves have reached a quality threshold where the hybrid approach is genuinely workable, not just theoretically appealing.</p>
+
+      <div class="key-takeaways">
+        <h4>Key Takeaways</h4>
+        <ul>
+          <li>Local code generation is competitive with API models for routine tasks; latency advantage is real and significant</li>
+          <li>Writing quality differences between model sizes are substantial — small models struggle with complex argument construction</li>
+          <li>"Local" doesn't mean "private by default" — the model's training history may contain data you'd rather not use</li>
+          <li>Quantization quality matters more than model size — a well-quantized 7B beats a poorly quantized 14B</li>
+          <li>A hybrid local-plus-API workflow is more cost-effective and practical than going all-in on either approach</li>
+        </ul>
+      </div>
+
+      <div class="tags">
+        <span class="tag">Tools</span>
+        <span class="tag">Local AI</span>
+        <span class="tag">Workflow</span>
+      </div>
+
+    </div>
+  </article>
+
+  <section class="related-articles">
+    <div class="container">
+      <h3>More from The Current</h3>
+      <div class="articles-grid">
+        <article class="article-card">
+          <a href="article-open-weights-vs-open-source.html" class="card-tag">AI</a>
+          <h3 class="card-title"><a href="article-open-weights-vs-open-source.html">The Real Difference Between Open Source and Open Weights AI Models</a></h3>
+          <div class="card-meta"><span>May 12, 2026</span></div>
+        </article>
+        <article class="article-card">
+          <a href="article-harness-engineering.html" class="card-tag">Analysis</a>
+          <h3 class="card-title"><a href="article-harness-engineering.html">The Harness Engineering Trend Nobody Is Talking About</a></h3>
+          <div class="card-meta"><span>May 3, 2026</span></div>
+        </article>
+        <article class="article-card">
+          <a href="article-why-ai-code-review.html" class="card-tag">Analysis</a>
+          <h3 class="card-title"><a href="article-why-ai-code-review.html">Why AI Code Review Is Still a Human Job</a></h3>
+          <div class="card-meta"><span>May 14, 2026</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <svg class="logo-mark" viewBox="0 0 28 28" fill="none" style="width:24px;height:24px"><rect width="28" height="28" rx="4" fill="currentColor" opacity="0.12"/><path d="M7 21L14 7L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.5 16H18.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            The Current
+          </a>
+          <p>Honest analysis of artificial intelligence trends. No hype, no fluff.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Topics</h4>
+          <ul>
+            <li><a href="category.html?cat=ai">Artificial Intelligence</a></li>
+            <li><a href="category.html?cat=ml">Machine Learning</a></li>
+            <li><a href="category.html?cat=tools">Tools &amp; Systems</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Site</h4>
+          <ul>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 The Current. All rights reserved.</span>
+        <span>automatemission.com</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

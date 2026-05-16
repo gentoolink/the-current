@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How Multi-Token Prediction Changes What LLMs Can Do — The Current</title>
+  <meta name="description" content="Standard language models predict one token at a time. A new generation predicts multiple tokens simultaneously — and the implications for reasoning, speed, and capability are significant.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%23D97706'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-size='20' fill='white' font-family='serif' font-weight='700'>C</text></svg>">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="index.html" class="logo">
+          <svg class="logo-mark" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="4" fill="currentColor" opacity="0.12"/><path d="M7 21L14 7L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.5 16H18.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          The Current <span>/ AI Trends</span>
+        </a>
+        <nav>
+          <ul class="nav">
+            <li><a href="index.html">Articles</a></li>
+            <li><a href="category.html?cat=ai">AI</a></li>
+            <li><a href="category.html?cat=ml">ML</a></li>
+            <li><a href="category.html?cat=tools">Tools</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="header-accent"></div>
+  </header>
+
+  <header class="article-header">
+    <div class="container--narrow">
+      <a href="category.html?cat=ml" class="category-pill">ML</a>
+      <h1 class="article-title">How Multi-Token Prediction Changes What LLMs Can Do</h1>
+      <p class="article-subtitle">Standard language models predict one token at a time. A new generation predicts multiple tokens simultaneously — and the implications for reasoning, speed, and capability are significant.</p>
+      <div class="byline">
+        <span class="byline-name">The Current</span>
+        <div class="byline-dot"></div>
+        <span>May 10, 2026</span>
+        <div class="byline-dot"></div>
+        <span class="reading-time">
+          <svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.5"/><path d="M8 4.5V8.5L10.5 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          7 min read
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <article class="article-body">
+    <div class="container--narrow">
+
+      <p>For the past several years, large language models have worked the same way: they read a sequence of tokens, then predict the next one. Then the next. Then the next. This is called autoregressive generation, and it works remarkably well. It also has a fundamental speed limit — to generate a response of N tokens, you pay N inference steps.</p>
+
+      <p>Multi-token prediction changes this assumption. Instead of predicting one token at a time, these models predict multiple tokens simultaneously at each step. The implications go beyond just faster inference.</p>
+
+      <h2>The Core Idea</h2>
+
+      <p>Standard transformer models use a softmax layer that produces a probability distribution over the entire vocabulary for the next token. Multi-token models add additional heads that predict the next two, four, or more tokens in parallel. The model learns to predict in "chunks" rather than single units.</p>
+
+      <p>Google's Gemma 4 implementation is one concrete example. At each decoding step, the model produces logits for the next N tokens simultaneously, then selects the highest-confidence sequence. When none of the predictions meet a confidence threshold, the model falls back to standard autoregressive decoding for that step.</p>
+
+      <h2>Why Speed Isn't the Main Story</h2>
+
+      <p>Raw throughput improvements from multi-token prediction are real but often overstated in press coverage. If a model predicts four tokens per step but three of them get discarded because they don't meet confidence thresholds, you haven't saved much. The real advantage is architectural.</p>
+
+      <p>When a model is forced to think about what comes next — and what comes after that, and after that — simultaneously, it develops internal representations that are qualitatively different from models trained only on single-token prediction. The ability to reason about longer-range dependencies improves even when the actual output doesn't use all the parallel predictions.</p>
+
+      <blockquote>
+        Parallel prediction creates a training signal that forces the model to think about future context, not just past context. That's a different kind of reasoning, not just a faster one.
+      </blockquote>
+
+      <h2>Memory and Long-Context Processing</h2>
+
+      <p>This is where the technology gets genuinely interesting. One of the core challenges in long-context processing is that models need to maintain coherence over thousands of tokens. With single-token prediction, the model processes sequentially — what it "knows" about earlier parts of the context degrades as it moves further from them.</p>
+
+      <p>Multi-token prediction creates an architecture that is, by design, more parallel. The model learns to maintain multiple future possibilities simultaneously, which requires a richer internal representation of context. Early results suggest this translates to better performance on tasks that require maintaining coherence over very long documents or conversations.</p>
+
+      <h2>What This Means for Practical Applications</h2>
+
+      <p>If you're building products that rely on long document summarization, code generation across large files, or multi-turn conversation with long memory, multi-token prediction models are worth evaluating specifically. The throughput gains are secondary — the primary value is whether the model's internal representations are better suited to your use case.</p>
+
+      <p>The state of the art is still evolving. Not all implementations are equivalent, and the gap between a well-implemented multi-token model and a poorly implemented one is significant. Treat vendor benchmarks with appropriate skepticism and test on your actual data.</p>
+
+      <div class="key-takeaways">
+        <h4>Key Takeaways</h4>
+        <ul>
+          <li>Multi-token prediction forces models to reason about multiple future steps simultaneously, improving internal representations</li>
+          <li>Throughput gains are real but vary significantly based on implementation quality</li>
+          <li>Long-context coherence and reasoning about distant context are the primary benefits, not just raw speed</li>
+          <li>Evaluate on your specific use case — benchmarks don't always transfer</li>
+        </ul>
+      </div>
+
+      <div class="tags">
+        <span class="tag">Machine Learning</span>
+        <span class="tag">LLMs</span>
+        <span class="tag">Research</span>
+      </div>
+
+    </div>
+  </article>
+
+  <section class="related-articles">
+    <div class="container">
+      <h3>More from The Current</h3>
+      <div class="articles-grid">
+        <article class="article-card">
+          <a href="article-why-ai-code-review.html" class="card-tag">Analysis</a>
+          <h3 class="card-title"><a href="article-why-ai-code-review.html">Why AI Code Review Is Still a Human Job</a></h3>
+          <div class="card-meta"><span>May 14, 2026</span></div>
+        </article>
+        <article class="article-card">
+          <a href="article-open-weights-vs-open-source.html" class="card-tag">AI</a>
+          <h3 class="card-title"><a href="article-open-weights-vs-open-source.html">The Real Difference Between Open Source and Open Weights AI Models</a></h3>
+          <div class="card-meta"><span>May 12, 2026</span></div>
+        </article>
+        <article class="article-card">
+          <a href="article-local-ai-month.html" class="card-tag">Tools</a>
+          <h3 class="card-title"><a href="article-local-ai-month.html">Five Things I Learned Running Local AI Models for a Month</a></h3>
+          <div class="card-meta"><span>May 7, 2026</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <svg class="logo-mark" viewBox="0 0 28 28" fill="none" style="width:24px;height:24px"><rect width="28" height="28" rx="4" fill="currentColor" opacity="0.12"/><path d="M7 21L14 7L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.5 16H18.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            The Current
+          </a>
+          <p>Honest analysis of artificial intelligence trends. No hype, no fluff.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Topics</h4>
+          <ul>
+            <li><a href="category.html?cat=ai">Artificial Intelligence</a></li>
+            <li><a href="category.html?cat=ml">Machine Learning</a></li>
+            <li><a href="category.html?cat=tools">Tools &amp; Systems</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Site</h4>
+          <ul>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 The Current. All rights reserved.</span>
+        <span>automatemission.com</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

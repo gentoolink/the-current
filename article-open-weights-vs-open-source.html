@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Real Difference Between Open Source and Open Weights AI Models — The Current</title>
+  <meta name="description" content="Everyone uses these terms interchangeably. They mean different things, and the difference matters if you care about what you're actually allowed to do with a model.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%23D97706'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-size='20' fill='white' font-family='serif' font-weight='700'>C</text></svg>">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="index.html" class="logo">
+          <svg class="logo-mark" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="4" fill="currentColor" opacity="0.12"/><path d="M7 21L14 7L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.5 16H18.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          The Current <span>/ AI Trends</span>
+        </a>
+        <nav>
+          <ul class="nav">
+            <li><a href="index.html">Articles</a></li>
+            <li><a href="category.html?cat=ai">AI</a></li>
+            <li><a href="category.html?cat=ml">ML</a></li>
+            <li><a href="category.html?cat=tools">Tools</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="header-accent"></div>
+  </header>
+
+  <header class="article-header">
+    <div class="container--narrow">
+      <a href="category.html?cat=ai" class="category-pill">AI</a>
+      <h1 class="article-title">The Real Difference Between Open Source and Open Weights AI Models</h1>
+      <p class="article-subtitle">Everyone uses these terms interchangeably. They mean different things, and the difference matters if you care about what you're actually allowed to do with a model.</p>
+      <div class="byline">
+        <span class="byline-name">The Current</span>
+        <div class="byline-dot"></div>
+        <span>May 12, 2026</span>
+        <div class="byline-dot"></div>
+        <span class="reading-time">
+          <svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.5"/><path d="M8 4.5V8.5L10.5 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          5 min read
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <article class="article-body">
+    <div class="container--narrow">
+
+      <p>If you've been paying attention to the AI space, you've heard both terms used to describe models like Llama, Mistral, DeepSeek, and Gemma. They're not the same thing, and conflating them leads to real misunderstandings about what you're permitted to do with a given model.</p>
+
+      <p>The distinction matters whether you're a solo developer building a product, a company trying to understand its legal exposure, or an enterprise evaluating vendor contracts.</p>
+
+      <h2>Open Weights: The Weights Are Free, Everything Else Isn't</h2>
+
+      <p>When a model is described as "open weights," it means the model parameters — the billions of numbers that encode what the model knows — are available to download and use. You can run the model, fine-tune it, distill it, deploy it behind your own infrastructure. The raw intelligence is in your hands.</p>
+
+      <p>What you typically cannot do, depending on the license: use it commercially without terms, modify the weights and then distribute your derivative under the same freedom, or claim the model itself is a product of your work. Llama 3 is a prominent example — the weights are available, but Meta imposes restrictions on use that are incompatible with a pure open source definition.</p>
+
+      <blockquote>
+        Open weights means you can see inside the model's brain. It does not mean the brain is free to use in any way you choose.
+      </blockquote>
+
+      <h2>Open Source: The Full Stack</h2>
+
+      <p>True open source, as the term has been understood in software for decades, means the complete package: source code, training data (or documentation of where to get it), training methodology, evaluation protocols, and the weights themselves. If you wanted to replicate the model from scratch, you could.</p>
+
+      <p>Very few AI models meet this standard. Most "open source" AI projects release weights but keep the training data, compute infrastructure, and pipeline proprietary. The Open Source Initiative has started publishing guidance on what open source AI actually means, but adoption of those standards has been slow.</p>
+
+      <h2>Why The Distinction Actually Matters</h2>
+
+      <p>The practical implications are significant. With a model that's open weights but restricted-license, you might be allowed to run it locally but prohibited from using it as the intelligence layer in a commercial SaaS product. Your legal team will care about this. Your investors will care about this.</p>
+
+      <p>With a truly open source model, you have the freedom to build without worrying about license enforcement. You can inspect exactly how the model was trained, on what data, with what methodology. If something in the training data is problematic, you can identify it and address it directly.</p>
+
+      <h2>The Short Version</h2>
+
+      <p>Open weights: you get the model, not the process. Open source: you get everything, including the ability to reproduce the model. The first is useful. The second is transformative — but it's still rare in the AI world.</p>
+
+      <p>The next time you see a model described as "open source," it worth asking: where's the training code? Where's the data? If the answer to both is "we're not sharing that," you're dealing with open weights, not open source.</p>
+
+      <div class="key-takeaways">
+        <h4>Key Takeaways</h4>
+        <ul>
+          <li>Open weights = the model file is free to download and run; usage restrictions vary by license</li>
+          <li>Open source (in the traditional sense) = complete transparency: weights, training code, data, and methodology</li>
+          <li>Most "open source" AI releases are technically open weights with additional restrictions</li>
+          <li>For commercial use, always audit the actual license — not just the marketing description</li>
+        </ul>
+      </div>
+
+      <div class="tags">
+        <span class="tag">AI</span>
+        <span class="tag">Open Source</span>
+        <span class="tag">Models</span>
+      </div>
+
+    </div>
+  </article>
+
+  <section class="related-articles">
+    <div class="container">
+      <h3>More from The Current</h3>
+      <div class="articles-grid">
+        <article class="article-card">
+          <a href="article-why-ai-code-review.html" class="card-tag">Analysis</a>
+          <h3 class="card-title"><a href="article-why-ai-code-review.html">Why AI Code Review Is Still a Human Job</a></h3>
+          <div class="card-meta"><span>May 14, 2026</span></div>
+        </article>
+        <article class="article-card">
+          <a href="article-multi-token-prediction.html" class="card-tag">ML</a>
+          <h3 class="card-title"><a href="article-multi-token-prediction.html">How Multi-Token Prediction Changes What LLMs Can Do</a></h3>
+          <div class="card-meta"><span>May 10, 2026</span></div>
+        </article>
+        <article class="article-card">
+          <a href="article-harness-engineering.html" class="card-tag">Analysis</a>
+          <h3 class="card-title"><a href="article-harness-engineering.html">The Harness Engineering Trend Nobody Is Talking About</a></h3>
+          <div class="card-meta"><span>May 3, 2026</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <svg class="logo-mark" viewBox="0 0 28 28" fill="none" style="width:24px;height:24px"><rect width="28" height="28" rx="4" fill="currentColor" opacity="0.12"/><path d="M7 21L14 7L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.5 16H18.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            The Current
+          </a>
+          <p>Honest analysis of artificial intelligence trends. No hype, no fluff.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Topics</h4>
+          <ul>
+            <li><a href="category.html?cat=ai">Artificial Intelligence</a></li>
+            <li><a href="category.html?cat=ml">Machine Learning</a></li>
+            <li><a href="category.html?cat=tools">Tools &amp; Systems</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Site</h4>
+          <ul>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 The Current. All rights reserved.</span>
+        <span>automatemission.com</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

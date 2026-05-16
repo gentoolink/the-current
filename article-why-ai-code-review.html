@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Why AI Code Review Is Still a Human Job — The Current</title>
+  <meta name="description" content="AI writes code faster than any developer alive. But shipping code without a human in the loop is how you get outages, security holes, and technical debt.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%23D97706'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-size='20' fill='white' font-family='serif' font-weight='700'>C</text></svg>">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="index.html" class="logo">
+          <svg class="logo-mark" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="4" fill="currentColor" opacity="0.12"/><path d="M7 21L14 7L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.5 16H18.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          The Current <span>/ AI Trends</span>
+        </a>
+        <nav>
+          <ul class="nav">
+            <li><a href="index.html">Articles</a></li>
+            <li><a href="category.html?cat=ai">AI</a></li>
+            <li><a href="category.html?cat=ml">ML</a></li>
+            <li><a href="category.html?cat=tools">Tools</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="header-accent"></div>
+  </header>
+
+  <header class="article-header">
+    <div class="container--narrow">
+      <a href="category.html?cat=analysis" class="category-pill">Analysis</a>
+      <h1 class="article-title">Why AI Code Review Is Still a Human Job</h1>
+      <p class="article-subtitle">AI writes code faster than any developer alive. But shipping without a human in the loop is how you get outages, security holes, and technical debt that takes years to undo.</p>
+      <div class="byline">
+        <span class="byline-name">The Current</span>
+        <div class="byline-dot"></div>
+        <span>May 14, 2026</span>
+        <div class="byline-dot"></div>
+        <span class="reading-time">
+          <svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.5"/><path d="M8 4.5V8.5L10.5 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          6 min read
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <article class="article-body">
+    <div class="container--narrow">
+
+      <p>There's a narrative circulating in tech right now: AI will replace software engineers. The evidence looks compelling. AI can generate a REST API in thirty seconds. It can refactor a messy module into something readable. It writes tests, documents functions, explains legacy codebases. The output is often genuinely good.</p>
+
+      <p>But I've been watching what happens when teams actually remove humans from the review process. The results are instructive.</p>
+
+      <h2>The Problem With AI-Generated Code</h2>
+
+      <p>AI code generators are trained on existing code. They know what correct code looks like — syntactically, stylistically, even idiomatically. What they don't know is your specific business context, the quirks of your production environment, or the implicit contracts your team maintains through code review.</p>
+
+      <p>I've seen AI-generated authentication logic that was technically correct and catastrophically wrong. The code passed every lint check and looked clean. But it used a timing-safe comparison in the wrong context, which created a side-channel leak. A human reviewer who knew the system's threat model caught it in ninety seconds.</p>
+
+      <blockquote>
+        AI doesn't know your threat model. It doesn't know which decisions are load-bearing and which are incidental. Code review is really about understanding intent — yours, and the code's.
+      </blockquote>
+
+      <h2>What AI Review Gets Wrong</h2>
+
+      <p>Current AI code review tools fall into a few predictable failure modes. The first is false confidence. AI is very good at sounding authoritative about incorrect conclusions. A junior developer who thinks they might be wrong will ask questions. An AI that is wrong will tell you the code is fine with complete certainty.</p>
+
+      <p>The second failure mode is context blindness. AI can read your diff but it can't read your codebase the way a human who has worked there for two years can. It doesn't know that this service is scheduled for deprecation, or that this variable name was deliberately chosen to match a regulatory requirement, or that this pattern exists because of a bug that cost the company $200,000 last year.</p>
+
+      <p>The third is systemic thinking. Code review isn't just about whether individual lines are correct. It's about whether the change fits the architecture, whether it creates dependencies that will cause problems later, whether the error handling strategy is consistent with the rest of the system.</p>
+
+      <h2>The Harness Is Still Human</h2>
+
+      <p>Here's what I think is actually happening: AI is becoming genuinely good at the mechanical parts of coding. The syntax, the boilerplate, the common patterns. What's not changing is the reasoning layer — the part where humans decide what to build, why to build it, and what tradeoffs to accept.</p>
+
+      <p>Code review is fundamentally a reasoning task, not a pattern-matching task. The reviewer is asking: does this change move the system toward or away from where it needs to be? Does it reflect good judgment about the unknowns?</p>
+
+      <p>That judgment takes context. It takes institutional knowledge. It takes understanding the people who wrote the code and what they were likely thinking. These are things that don't transfer to a model, no matter how large.</p>
+
+      <div class="key-takeaways">
+        <h4>Key Takeaways</h4>
+        <ul>
+          <li>AI code generators produce syntactically correct code that can be semantically wrong in subtle, dangerous ways</li>
+          <li>AI review tools lack context about business logic, threat models, and team conventions</li>
+          <li>Code review is a reasoning task — checking intent against implementation — not a pattern-matching exercise</li>
+          <li>The teams getting the most from AI are using it to augment human review, not replace it</li>
+        </ul>
+      </div>
+
+      <p>The honest answer is that AI changes what code review looks for, not whether you need a human doing it. You're still going to need someone in the loop who understands the system and is willing to be wrong. The machine just helps them look at more code in the same amount of time.</p>
+
+      <div class="tags">
+        <span class="tag">AI</span>
+        <span class="tag">Software Engineering</span>
+        <span class="tag">Analysis</span>
+      </div>
+
+    </div>
+  </article>
+
+  <section class="related-articles">
+    <div class="container">
+      <h3>More from The Current</h3>
+      <div class="articles-grid">
+        <article class="article-card">
+          <a href="article-open-weights-vs-open-source.html" class="card-tag">AI</a>
+          <h3 class="card-title"><a href="article-open-weights-vs-open-source.html">The Real Difference Between Open Source and Open Weights AI Models</a></h3>
+          <div class="card-meta"><span>May 12, 2026</span></div>
+        </article>
+        <article class="article-card">
+          <a href="article-multi-token-prediction.html" class="card-tag">ML</a>
+          <h3 class="card-title"><a href="article-multi-token-prediction.html">How Multi-Token Prediction Changes What LLMs Can Do</a></h3>
+          <div class="card-meta"><span>May 10, 2026</span></div>
+        </article>
+        <article class="article-card">
+          <a href="article-harness-engineering.html" class="card-tag">Analysis</a>
+          <h3 class="card-title"><a href="article-harness-engineering.html">The Harness Engineering Trend Nobody Is Talking About</a></h3>
+          <div class="card-meta"><span>May 3, 2026</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <svg class="logo-mark" viewBox="0 0 28 28" fill="none" style="width:24px;height:24px"><rect width="28" height="28" rx="4" fill="currentColor" opacity="0.12"/><path d="M7 21L14 7L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.5 16H18.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            The Current
+          </a>
+          <p>Honest analysis of artificial intelligence trends. No hype, no fluff.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Topics</h4>
+          <ul>
+            <li><a href="category.html?cat=ai">Artificial Intelligence</a></li>
+            <li><a href="category.html?cat=ml">Machine Learning</a></li>
+            <li><a href="category.html?cat=tools">Tools &amp; Systems</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Site</h4>
+          <ul>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 The Current. All rights reserved.</span>
+        <span>automatemission.com</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
