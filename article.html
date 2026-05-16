@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Why AI Code Review Is Still a Human Job — The Current</title>
+  <title>Why AI Code Review Is Still a Human Job — Automate Mission</title>
   <meta name="description" content="AI tools write code faster than any developer. But shipping software requires judgment calls that AI consistently gets wrong.">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23F59E0B' width='100' height='100' rx='12'/><text y='.9em' x='50%' text-anchor='middle' font-size='70' fill='white'>C</text></svg>">
@@ -14,26 +14,42 @@
     <div class="container">
       <div class="header-inner">
         <a href="index.html" class="logo">
-          <span class="logo-text">The<span class="logo-accent">.</span>Current</span>
-          <span class="logo-tagline">AI Trends & Analysis</span>
+          <svg class="logo-mark" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="28" height="28" rx="4" fill="currentColor" opacity="0.12"/>
+            <path d="M7 21L14 7L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M9.5 16H18.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          Automate Mission <span>/ AI Trends</span>
         </a>
-        <nav class="main-nav">
-          <a href="index.html" class="nav-link">Home</a>
-          <a href="category.html?cat=ai" class="nav-link">AI</a>
-          <a href="category.html?cat=ml" class="nav-link">ML</a>
-          <a href="category.html?cat=tools" class="nav-link">Tools</a>
-          <a href="about.html" class="nav-link">About</a>
-        </nav>
-        <button class="menu-toggle" aria-label="Toggle menu">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="3" y1="6" x2="21" y2="6"></line>
-            <line x1="3" y1="12" x2="21" y2="12"></line>
-            <line x1="3" y1="18" x2="21" y2="18"></line>
+        <button class="menu-toggle" aria-label="Menu" onclick="toggleMenu()">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+            <path d="M3 6h16M3 11h16M3 16h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
           </svg>
         </button>
+        <nav class="nav-desktop">
+          <ul class="nav">
+            <li><a href="index.html">Articles</a></li>
+            <li><a href="category.html?cat=ai">AI</a></li>
+            <li><a href="category.html?cat=ml">ML</a></li>
+            <li><a href="category.html?cat=tools">Tools</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </nav>
       </div>
     </div>
+    <div class="header-accent"></div>
   </header>
+
+  <!-- MOBILE NAV -->
+  <div class="mobile-nav" id="mobileNav">
+    <ul>
+      <li><a href="index.html">Articles</a></li>
+      <li><a href="category.html?cat=ai">AI</a></li>
+      <li><a href="category.html?cat=ml">ML</a></li>
+      <li><a href="category.html?cat=tools">Tools</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </div>
 
   <!-- Article Page -->
   <main class="article-page">
@@ -320,7 +336,7 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <div class="logo-text">The<span style="color: var(--accent);">.</span>Current</div>
+          <div class="logo-text">Automate Mission</div>
           <p>Straight-forward analysis of AI trends and machine learning developments. No hype, no "revolutionary" claims—just clear thinking about what matters.</p>
         </div>
         <nav class="footer-nav">
@@ -349,30 +365,24 @@
         </nav>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 The Current. All rights reserved.</p>
-        <div class="footer-social">
-          <a href="#" aria-label="Twitter">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/>
-            </svg>
-          </a>
-          <a href="#" aria-label="LinkedIn">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-              <rect x="2" y="9" width="4" height="12"/>
-              <circle cx="4" cy="4" r="2"/>
-            </svg>
-          </a>
-          <a href="#" aria-label="RSS">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M4 11a9 9 0 0 1 9 9"/>
-              <path d="M4 4a16 16 0 0 1 16 16"/>
-              <circle cx="5" cy="19" r="1"/>
-            </svg>
-          </a>
-        </div>
+        <span>© 2026 Automate Mission. All rights reserved.</span>
+        <span>Editor &amp; Owner: Ken McGonigal · <a href="https://gentoolinkwebservices.com" style="color:#D97706">Hosting by Gentoolink Web Services</a></span>
       </div>
     </div>
   </footer>
+
+<script>
+    function toggleMenu() {
+      var nav = document.getElementById('mobileNav');
+      nav.classList.toggle('open');
+    }
+    document.addEventListener('click', function(e) {
+      var nav = document.getElementById('mobileNav');
+      var toggle = document.querySelector('.menu-toggle');
+      if (!nav.contains(e.target) && !toggle.contains(e.target)) {
+        nav.classList.remove('open');
+      }
+    });
+  </script>
 </body>
 </html>
