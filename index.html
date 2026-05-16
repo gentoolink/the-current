@@ -22,7 +22,7 @@
           </svg>
           Automate Mission <span>/ AI Trends</span>
         </a>
-        <button class="menu-toggle" aria-label="Menu" onclick="toggleMenu()">
+        <button class="menu-toggle" id="menuToggleBtn" aria-label="Menu" onclick="toggleMenu()" style="display:none">
           <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
             <path d="M3 6h16M3 11h16M3 16h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
           </svg>
@@ -230,13 +230,44 @@
 <script>
     function toggleMenu() {
       var nav = document.getElementById('mobileNav');
-      nav.classList.toggle('open');
+      var btn = document.getElementById('menuToggleBtn');
+      var desktopNav = document.querySelector('.nav-desktop');
+      var isOpen = nav.style.display === 'block';
+
+      if (isOpen) {
+        nav.style.display = 'none';
+        btn.setAttribute('aria-expanded', 'false');
+      } else {
+        nav.style.display = 'block';
+        btn.setAttribute('aria-expanded', 'true');
+      }
     }
+
+    function initMobileMenu() {
+      var btn = document.getElementById('menuToggleBtn');
+      var nav = document.getElementById('mobileNav');
+      var desktopNav = document.querySelector('.nav-desktop');
+      var w = window.innerWidth;
+
+      if (w <= 640) {
+        btn.style.display = 'flex';
+        desktopNav.style.display = 'none';
+        nav.style.display = 'none';
+      } else {
+        btn.style.display = 'none';
+        desktopNav.style.display = 'flex';
+        nav.style.display = 'none';
+      }
+    }
+
+    initMobileMenu();
+    window.addEventListener('resize', initMobileMenu);
+
     document.addEventListener('click', function(e) {
       var nav = document.getElementById('mobileNav');
-      var toggle = document.querySelector('.menu-toggle');
+      var toggle = document.getElementById('menuToggleBtn');
       if (!nav.contains(e.target) && !toggle.contains(e.target)) {
-        nav.classList.remove('open');
+        nav.style.display = 'none';
       }
     });
   </script>

@@ -22,7 +22,7 @@
           </svg>
           Automate Mission <span>/ AI Trends</span>
         </a>
-        <button class="menu-toggle" aria-label="Menu" onclick="toggleMenu()">
+        <button class="menu-toggle" id="menuToggleBtn"  aria-label="Menu"  onclick="toggleMenu()" style="display:none">
           <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
             <path d="M3 6h16M3 11h16M3 16h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
           </svg>
@@ -42,7 +42,7 @@
   </header>
 
   <!-- MOBILE NAV -->
-  <div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav" id="mobileNav" style="display:none">
     <ul>
       <li><a href="index.html">Articles</a></li>
       <li><a href="category.html?cat=ai">AI</a></li>
