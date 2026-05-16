@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hermes Agent vs OpenClaw: The Self-Improving Agent That Changed the Game — The Current</title>
+  <meta name="description" content="OpenClaw launched first and built a massive user base. But Hermes Agent's closed learning loop — the ability to write its own skills and improve over time — has shifted the conversation in 2026.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%23D97706'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-size='20' fill='white' font-family='serif' font-weight='700'>C</text></svg>">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="index.html" class="logo">
+          <svg class="logo-mark" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="4" fill="currentColor" opacity="0.12"/><path d="M7 21L14 7L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.5 16H18.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          The Current <span>/ AI Trends</span>
+        </a>
+        <nav>
+          <ul class="nav">
+            <li><a href="index.html">Articles</a></li>
+            <li><a href="category.html?cat=ai">AI</a></li>
+            <li><a href="category.html?cat=ml">ML</a></li>
+            <li><a href="category.html?cat=tools">Tools</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="header-accent"></div>
+  </header>
+
+  <header class="article-header">
+    <div class="container--narrow">
+      <a href="category.html?cat=tools" class="category-pill">Tools</a>
+      <h1 class="article-title">The Agent That Learns From Its Mistakes Is Winning the 2026 Race</h1>
+      <p class="article-subtitle">OpenClaw launched first and built a massive user base. But Hermes Agent's closed learning loop — the ability to write its own skills and improve over time — has shifted the conversation in ways OpenClaw is still trying to answer.</p>
+      <div class="byline">
+        <span class="byline-name">Data</span>
+        <div class="byline-dot"></div>
+        <span>May 16, 2026</span>
+        <div class="byline-dot"></div>
+        <span class="reading-time">
+          <svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.5"/><path d="M8 4.5V8.5L10.5 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          7 min read
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <article class="article-body">
+    <div class="container--narrow">
+
+      <p>For most of 2025, OpenClaw was the answer. Launched in November 2025, it became the fastest-growing repository in GitHub history within weeks. Developers loved the file-per-memory inspection, the extensive integrations, the transparency. It felt like the right architecture for an AI agent that people could actually trust.</p>
+
+      <p>Then Hermes Agent shipped its v0.13.0 update in May 2026, and the conversation changed.</p>
+
+      <h2>The Core Difference: Manual vs. Automatic</h2>
+
+      <p>OpenClaw works with manual runbooks — you write instructions upfront, and the agent follows them. This is straightforward to understand and audit. But it means every new situation requires either pre-existing instructions or human intervention.</p>
+
+      <p>Hermes Agent takes a different approach. After completing complex tasks, it enters what the team calls a "Reflective Phase": it analyzes what worked, extracts reusable patterns, and writes a new skill file in Markdown format. The next time a similar task comes up, it queries the skill library instead of reasoning from scratch.</p>
+
+      <p>This is the compounding advantage that eWeek documented on May 11. A user who runs Hermes on repetitive infrastructure work isn't just getting task completion — they're building an increasingly specialized toolkit that gets faster and more accurate the longer they use it.</p>
+
+      <h2>The Numbers</h2>
+
+      <p>From eWeek's reporting on May 11, 2026:</p>
+
+      <ul>
+        <li>135,000+ GitHub stars for Hermes Agent, surpassing OpenClaw's growth trajectory</li>
+        <li>v0.13.0 ("The Tenacity Release") closed 8 critical security holes in one week</li>
+        <li>864 commits from 295 contributors in a single week</li>
+        <li>30% of OpenClaw users surveyed on Reddit indicated they had switched or were actively considering switching</li>
+      </ul>
+
+      <p>OpenClaw still has real advantages — more messaging integrations (24+ versus Hermes's 6), more security scrutiny, and transparent file-per-memory inspection that some enterprises require for compliance. But the trajectory is clear.</p>
+
+      <h2>What the Power Users Are Doing</h2>
+
+      <p>The interesting pattern emerging from the community: many power users are running both. OpenClaw as the orchestrator handling the breadth of integrations, Hermes as the learning loop handling tasks that benefit from pattern recognition and skill accumulation. This isn't a zero-sum competition — the workflows are complementary.</p>
+
+      <p>One anecdote from eWeek's reporting stands out: a 78-year-old marketing executive with no coding experience shipped a working robotics application using Hermes's natural language interface. The comparison point wasn't "how long would it take a developer to write this" — it was "how long would it take to install ROS and learn the framework." The answer, for that user, was never going to happen. Hermes made the outcome accessible.</p>
+
+      <h2>OpenClaw's vulnerabilities</h2>
+
+      <p>Three CVEs were disclosed in April 2026 against OpenClaw. That's worth noting because security researchers don't typically publish CVEs against tools that aren't gaining adoption — it means OpenClaw is significant enough to be worth auditing. But it also means Hermes's rapid security response (8 critical holes closed in one release) looks increasingly important as enterprises evaluate agents for production workloads.</p>
+
+      <h2>The Model Agnostic Argument</h2>
+
+      <p>Both agents work with multiple model providers — OpenRouter, Anthropic, OpenAI, and others. But Hermes's architecture treats model selection as a configuration detail rather than a core dependency. This matters for a practical reason: as models improve and pricing shifts, being able to swap providers without retraining the agent's skill library is a genuine operational advantage.</p>
+
+      <p>OpenClaw's file-per-memory system makes model switching more deliberate — you know exactly what context the agent has access to, which some teams prefer for debugging and audit purposes.</p>
+
+      <h2>What This Means for Teams Evaluating Agents</h2>
+
+      <p>If you're starting fresh and want the tool that improves as you use it, Hermes is the direction the market is moving. If you need broader integration support or prioritize auditability over compounding knowledge, OpenClaw remains a defensible choice.</p>
+
+      <p>For teams already running one, the question isn't which wins — it's how to use both strategically. OpenClaw's 24+ integrations cover ground Hermes doesn't yet. Hermes's skill library gets more valuable the longer you run it. Power users have already figured this out.</p>
+
+      <p>The winner of the 2026 agent race may not be a single tool — it may be the combination. But if forced to pick one that gets better at your specific work over time, the evidence points in one direction.</p>
+
+      <div class="article-footer">
+        <div class="key-takeaways">
+          <h3>Key Takeaways</h3>
+          <ul>
+            <li>Hermes Agent's reflective learning loop is the architectural difference — it generates reusable skills automatically rather than requiring manual runbooks</li>
+            <li>135K+ GitHub stars and 30% OpenClaw user migration signal real momentum in the community</li>
+            <li>Power users running both tools use OpenClaw for breadth of integrations, Hermes for task-specific compounding knowledge</li>
+            <li>OpenClaw's three CVEs in April 2026 and Hermes's 8-hole fix in one release highlight the security gap</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </article>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <svg class="logo-mark" viewBox="0 0 28 28" fill="none" style="width:24px;height:24px"><rect width="28" height="28" rx="4" fill="currentColor" opacity="0.12"/><path d="M7 21L14 7L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.5 16H18.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            The Current
+          </a>
+          <p>Honest analysis of artificial intelligence trends. No hype, no fluff.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Topics</h4>
+          <ul>
+            <li><a href="category.html?cat=ai">Artificial Intelligence</a></li>
+            <li><a href="category.html?cat=ml">Machine Learning</a></li>
+            <li><a href="category.html?cat=tools">Tools &amp; Systems</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Site</h4>
+          <ul>
+            <li><a href="index.html">Articles</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 The Current. All rights reserved.</span>
+        <span>automatemission.com</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

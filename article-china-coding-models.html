@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>China's Coding Models Stopped Lagging — The Numbers That Changed the Narrative — The Current</title>
+  <meta name="description" content="For years the frame was 'China is six to nine months behind.' Four Chinese labs broke that narrative in twelve days. The coding benchmarks don't support the old story anymore.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%23D97706'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-size='20' fill='white' font-family='serif' font-weight='700'>C</text></svg>">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="index.html" class="logo">
+          <svg class="logo-mark" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="4" fill="currentColor" opacity="0.12"/><path d="M7 21L14 7L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.5 16H18.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          The Current <span>/ AI Trends</span>
+        </a>
+        <nav>
+          <ul class="nav">
+            <li><a href="index.html">Articles</a></li>
+            <li><a href="category.html?cat=ai">AI</a></li>
+            <li><a href="category.html?cat=ml">ML</a></li>
+            <li><a href="category.html?cat=tools">Tools</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="header-accent"></div>
+  </header>
+
+  <header class="article-header">
+    <div class="container--narrow">
+      <a href="category.html?cat=ml" class="category-pill">ML</a>
+      <h1 class="article-title">China's Coding Models Stopped Lagging. The Old Narrative Doesn't Hold.</h1>
+      <p class="article-subtitle">For years the frame was "China is six to nine months behind." Four Chinese labs broke that narrative in twelve days. Here's the data that ended the argument.</p>
+      <div class="byline">
+        <span class="byline-name">Data</span>
+        <div class="byline-dot"></div>
+        <span>May 17, 2026</span>
+        <div class="byline-dot"></div>
+        <span class="reading-time">
+          <svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.5"/><path d="M8 4.5V8.5L10.5 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          6 min read
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <article class="article-body">
+    <div class="container--narrow">
+
+      <p>The conventional wisdom held for years: American frontier models were roughly six to nine months ahead of the best Chinese labs on agentic coding tasks. The evidence was mostly anecdotal — the gap felt real, the benchmarks supported it, and nobody had reason to challenge it.</p>
+
+      <p>Then April 2026 happened. Four Chinese labs released open-weights coding models inside a twelve-day window. The numbers came back, and they didn't match the old story.</p>
+
+      <h2>The Twelve-Day Sprint</h2>
+
+      <p>From Air Street Press's May 2026 State of AI report: Z.ai's GLM-5.1, MiniMax's M2.7, Moonshot's Kimi K2.6, and DeepSeek's V4 all landed in rapid succession. GLM-5.1's stock closed up 15.92% on launch day. MiniMax's M2.7 completed over 100 rounds of self-optimizing its own scaffold. Kimi K2.6 ran a 12-hour continuous tool-use trace porting an inference engine to Zig. DeepSeek's V4-Pro claimed parity with Opus 4.6 and GPT-5.4.</p>
+
+      <p>The aggregate result on SWE-Bench Pro: all four models scored between 56 and 59. For context, that puts them in the same tier as the leading Western frontier models on coding tasks — not six to nine months behind, not追赶 (catching up), but effectively at parity.</p>
+
+      <h2>Why the Gap Closed</h2>
+
+      <p>Three things happened in parallel. First, the open-weights ecosystem matured — when a technique works, it propagates fast when anyone can download and build on the model. Second, the cost structure changed: all four of these models are priced at under one-third the cost of Claude Opus 4.7 per token, which means the economics of using them for production coding work are dramatically different from the American frontier options.</p>
+
+      <p>Third, and less discussed: the training methodologies converged. Reinforcement learning with verifiable rewards, scratchpad reasoning, and agentic tool use are not proprietary techniques. Once they work, they're documented, replicated, and improved on by the next lab within weeks.</p>
+
+      <h2>The Benchmark Nuance</h2>
+
+      <p>Air Street Press notes an important caveat: "Both true — different evaluators measuring different things." NIST's CAISI evaluation showed an aggregate cross-domain benchmark where the Chinese models still lag the leading American frontier by roughly eight months. DeepSeek's own model card claims V4-Pro at parity with Opus 4.6 and GPT-5.4.</p>
+
+      <p>This is actually consistent. Different benchmarks measure different capabilities. SWE-Bench measures real-world code fix capability on GitHub issues — a task that is verifiable and reproducible. Broader capability benchmarks like the Intelligence Index include reasoning, planning, and multi-step task completion that may show larger gaps.</p>
+
+      <p>What matters for practical use: if you're evaluating these models for coding assistance, the SWE-Bench numbers are the relevant data point, and those numbers have compressed significantly.</p>
+
+      <h2>What This Means for the Market</h2>
+
+      <p>Cursor is reportedly raising $2 billion at a $50 billion-plus valuation with enterprise revenue surging toward a $6 billion run-rate exit (TechCrunch, April 2026). Cognition is in talks for a follow-on at $25 billion, up from $10.2 billion in September 2025. These valuations are being priced on the assumption that coding agents represent a large and defensible market. If the Chinese open-weights models are at parity on coding benchmarks at under one-third the cost, that changes the competitive dynamics for every team building in this space.</p>
+
+      <p>The practical implication: if you're building a coding agent workflow today and paying per-token for Claude Opus or GPT-5 class models, you're doing it with a cost structure that may not be defensible in six months. The open-weights alternatives are good enough for most tasks and significantly cheaper.</p>
+
+      <h2>The Attribution Problem</h2>
+
+      <p>Anthropic publicly stated in February 2026 that three Chinese labs — including some of those above — were essentially fine-tuned distillations of frontier models rather than independent research. That accusation is worth noting and is still cited by defenders of the "China lags" narrative. But the SWE-Bench scores don't distinguish between "independent research" and "distillation." They measure output quality. If the output is at parity, the attribution argument is less relevant for people choosing which model to use in production.</p>
+
+      <div class="article-footer">
+        <div class="key-takeaways">
+          <h3>Key Takeaways</h3>
+          <ul>
+            <li>GLM-5.1, M2.7, Kimi K2.6, and DeepSeek V4 all scored 56-59 on SWE-Bench Pro in April 2026 — at coding parity with Claude Opus 4.6 and GPT-5.4</li>
+            <li>All four models are priced at under one-third the cost of Claude Opus 4.7, fundamentally changing the economics of coding agent workflows</li>
+            <li>The "China lags 6-9 months" frame on coding no longer holds — SWE-Bench is verifiable and reproducible; the numbers don't support the old narrative</li>
+            <li>Benchmark disagreements (NIST CAISI vs. model cards) reflect different evaluation methodologies, not arbitrary data — both can be true simultaneously</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </article>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <svg class="logo-mark" viewBox="0 0 28 28" fill="none" style="width:24px;height:24px"><rect width="28" height="28" rx="4" fill="currentColor" opacity="0.12"/><path d="M7 21L14 7L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.5 16H18.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            The Current
+          </a>
+          <p>Honest analysis of artificial intelligence trends. No hype, no fluff.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Topics</h4>
+          <ul>
+            <li><a href="category.html?cat=ai">Artificial Intelligence</a></li>
+            <li><a href="category.html?cat=ml">Machine Learning</a></li>
+            <li><a href="category.html?cat=tools">Tools &amp; Systems</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Site</h4>
+          <ul>
+            <li><a href="index.html">Articles</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 The Current. All rights reserved.</span>
+        <span>automatemission.com</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

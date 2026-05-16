@@ -82,15 +82,30 @@
           </div>
         </article>
 
+        
+
         <article class="article-card fade-up">
-          <a href="article-local-ai-month.html" class="card-tag">Tools</a>
-          <h3 class="card-title"><a href="article-local-ai-month.html">Five Things I Learned Running Local AI Models for a Month</a></h3>
+          <a href="article-hermes-agent-vs-openclaw.html" class="card-tag">Tools</a>
+          <h3 class="card-title"><a href="article-hermes-agent-vs-openclaw.html">The Agent That Learns From Its Mistakes Is Winning the 2026 Race</a></h3>
           <div class="card-meta">
-            <span>May 7, 2026</span>
+            <span>May 16, 2026</span>
             <div style="width:1px;height:10px;background:var(--border)"></div>
             <span class="reading-time">
               <svg viewBox="0 0 16 16" fill="none" style="width:14px;height:14px"><circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.5"/><path d="M8 4.5V8.5L10.5 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-              8 min read
+              7 min read
+            </span>
+          </div>
+        </article>
+
+        <article class="article-card fade-up">
+          <a href="article-china-coding-models.html" class="card-tag">ML</a>
+          <h3 class="card-title"><a href="article-china-coding-models.html">China's Coding Models Stopped Lagging. The Old Narrative Doesn't Hold.</a></h3>
+          <div class="card-meta">
+            <span>May 17, 2026</span>
+            <div style="width:1px;height:10px;background:var(--border)"></div>
+            <span class="reading-time">
+              <svg viewBox="0 0 16 16" fill="none" style="width:14px;height:14px"><circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.5"/><path d="M8 4.5V8.5L10.5 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              6 min read
             </span>
           </div>
         </article>
@@ -155,11 +170,16 @@
     };
 
     const cards = document.querySelectorAll('.article-card');
-    const catMap = { 'analysis': 0, 'ai': 1, 'ml': 2, 'tools': 3 };
+    const catMap = {
+      ai: [1],
+      ml: [2, 4],
+      tools: [3],
+      analysis: [0, 5]
+    };
 
-    if (cat !== 'all') {
+    if (cat !== 'all' && catMap[cat]) {
       cards.forEach((card, i) => {
-        card.style.display = (i === catMap[cat]) ? '' : 'none';
+        card.style.display = catMap[cat].includes(i) ? '' : 'none';
       });
     }
 
