@@ -1,0 +1,62 @@
+# When "Good Enough" Becomes Dangerous: What Karpathy's Code Confession Actually Means
+
+*And why the AI coding revolution has a hidden cost nobody's talking about*
+
+---
+
+Andre Karpathy recently admitted something strange at a conference. He said he uses AI coding tools constantly — and has stopped checking the output. He used to correct the code all the time, but now, he says, he doesn't need to.
+
+That's framed as a productivity tip. But strip away the framing and what it actually says is: the job of a software engineer used to be writing and reviewing code. Karpathy just outsourced the review part to something that was built by people who can't tell him what's wrong with it.
+
+Then, in the same interview, Karpathy described what happens when he actually looks at the generated code. His words, verbatim: "Sometimes I get a little bit of a heart attack because it's not super amazing code necessarily all the time. It's very bloaty. There's a lot of copypaste. There are awkward abstractions that are brittle. It works, but it's just really gross."
+
+That's the same technology being deployed to replace radiologists, do your taxes, and run your电网. And it's making one of the people who helped invent it have medical events.
+
+## The Contradiction at the Heart of AI Coding
+
+Here is what's wild about this: Karpathy says he stopped reviewing the output because the models make "less and less mistakes." But then he also says he gets a heart attack every time he opens a pull request.
+
+Both things are true simultaneously. The code works. The code is also gross.
+
+You can see why this creates a problem. If you're a CEO who's been told AI will write all your software, you're hearing "the code works" from your engineers. What you're not hearing — because engineers don't say it in board meetings — is that the code underneath is bloaty, brittle, and held together by the developer's constant vigilance. Karpathy himself says this is "the frontier." It's the best it gets right now.
+
+## What Karpathy's Workflow Actually Looks Like
+
+Karpathy describes a process that sounds almost like prompt engineering more than software development. He writes an extremely detailed markdown document — every edge case, every behavior — and then asks the AI to generate code from that spec. The more precise the spec, the better the output.
+
+His admission about simplification is telling: when he asks the model to simplify a piece of code it wrote, it often can't do it. The model hits a wall even when a better solution is obvious to a human. This is a specific known failure mode. If the task isn't well represented in the training data — if it's too specific, too niche, too much in the tail of the distribution — no amount of prompting will get you there.
+
+This means AI coding tools are extraordinarily good at things that look like other things they've seen before, and dangerously bad at things that don't. That's not a boundary you can see from the outside.
+
+## The Skill That Actually Matters Now
+
+Karpathy offers one genuinely useful insight for anyone trying to get employed as a software developer right now. Most hiring processes haven't caught up to agentic engineering. Companies are still running leetcode challenges and whiteboarding puzzles. But what you actually need in an AI-assisted workflow is the ability to oneshot — to write a prompt so well-specified that the model can execute it cleanly the first time.
+
+His interview proposal: give candidates a large project — something like building a Twitter clone — and see how they spec it out. The people who know what they don't know will write better specs. The ones who don't will produce specs that choke on tokens, session length, cookie expiration, rate limiting, and a dozen other things that don't appear in the spec until they break production.
+
+The skill isn't coding. It's knowing how to give the AI something it's actually ready to handle.
+
+## The Bigger Question Nobody Can Answer
+
+Toward the end of the interview, the interviewer asks Karpathy what skills will still matter as AI gets better. What should someone actually learn?
+
+Karpathy's answer was, by his own admission, empty. He couldn't really answer it.
+
+That should tell you something. If the person who helped invent this technology can't articulate what survives it, the honest answer is: nobody knows yet. The industry is moving too fast, the technology is changing too rapidly, and the downstream effects are too distributed to model.
+
+What we do know is this: the code being written by AI right now is in production systems that control real infrastructure, handles real medical data, and makes real decisions about people. And the people deploying it are sometimes having heart attacks when they look at it.
+
+Whether that's the new normal or a crisis being papered over with TED talks — that's a question worth sitting with.
+
+---
+
+**Key takeaways:**
+
+- AI-generated code "works" but is frequently "bloaty," "brittle," and "gross" — even by its creator's own admission
+- The real skill in AI-assisted development is writing precise specs, not writing code
+- The hiring process for software engineers hasn't caught up to agentic workflows
+- Even Andre Karpathy can't clearly articulate what skills will remain valuable as AI coding improves
+
+---
+
+*Sources: Andre Karpathy interview (conference appearance, 2026) — via [Vendasta YouTube](https://youtu.be/ZugX7a99dLk)*
