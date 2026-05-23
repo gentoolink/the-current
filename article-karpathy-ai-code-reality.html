@@ -4,59 +4,110 @@
 
 ---
 
-Andre Karpathy recently admitted something strange at a conference. He said he uses AI coding tools constantly — and has stopped checking the output. He used to correct the code all the time, but now, he says, he doesn't need to.
+Andre Karpathy built an app called MenuGen. You photograph a restaurant menu, the AI OCRs the items, generates images of each dish, then re-renders the whole menu with pictures. It was a real application on Vercel with Stripe and Google authentication. It took effort.
 
-That's framed as a productivity tip. But strip away the framing and what it actually says is: the job of a software engineer used to be writing and reviewing code. Karpathy just outsourced the review part to something that was built by people who can't tell him what's wrong with it.
+Then someone else did the same thing with a single prompt. Photo in, photo out, dishes rendered in place. No app. No code. No deployment.
 
-Then, in the same interview, Karpathy described what happens when he actually looks at the generated code. His words, verbatim: "Sometimes I get a little bit of a heart attack because it's not super amazing code necessarily all the time. It's very bloaty. There's a lot of copypaste. There are awkward abstractions that are brittle. It works, but it's just really gross."
+Karpathy's reaction on stage: "All of my MenuGen is spurious. That app should not exist."
 
-That's the same technology being deployed to replace radiologists, do your taxes, and run your电网. And it's making one of the people who helped invent it have medical events.
+That moment captures something important about where software development is right now. Not the "AI is getting better" story — the real story, which is that the ground beneath developers is not just shifting, it is evaporating.
 
-## The Contradiction at the Heart of AI Coding
+---
 
-Here is what's wild about this: Karpathy says he stopped reviewing the output because the models make "less and less mistakes." But then he also says he gets a heart attack every time he opens a pull request.
+## What Karpathy Actually Said at Sequoia
 
-Both things are true simultaneously. The code works. The code is also gross.
+Karpathy — founding member of OpenAI, former head of AI at Tesla, and the person who coined the term "vibe coding" — spoke at Sequoia's AI Ascent conference in April 2026. The talk was billed as an update on vibe coding. What it actually delivered was something more honest.
 
-You can see why this creates a problem. If you're a CEO who's been told AI will write all your software, you're hearing "the code works" from your engineers. What you're not hearing — because engineers don't say it in board meetings — is that the code underneath is bloaty, brittle, and held together by the developer's constant vigilance. Karpathy himself says this is "the frontier." It's the best it gets right now.
+Here is what he said, in his own words, about the state of AI-generated code:
 
-## What Karpathy's Workflow Actually Looks Like
+> "Sometimes I get a little bit of a heart attack because it's not like super amazing code necessarily all the time. It's very bloaty, and there's a lot of copy-paste, and there's awkward abstractions that are brittle, and it works, but it's just really gross."
 
-Karpathy describes a process that sounds almost like prompt engineering more than software development. He writes an extremely detailed markdown document — every edge case, every behavior — and then asks the AI to generate code from that spec. The more precise the spec, the better the output.
+And then, in the same talk, he described his workflow: he uses AI coding tools constantly, has largely stopped reviewing the output, and says he has never felt more behind as a programmer.
 
-His admission about simplification is telling: when he asks the model to simplify a piece of code it wrote, it often can't do it. The model hits a wall even when a better solution is obvious to a human. This is a specific known failure mode. If the task isn't well represented in the training data — if it's too specific, too niche, too much in the tail of the distribution — no amount of prompting will get you there.
+Both things are true simultaneously. The code works. The code is gross. He stopped reviewing it anyway.
 
-This means AI coding tools are extraordinarily good at things that look like other things they've seen before, and dangerously bad at things that don't. That's not a boundary you can see from the outside.
+---
 
-## The Skill That Actually Matters Now
+## The MenuGen Moment
 
-Karpathy offers one genuinely useful insight for anyone trying to get employed as a software developer right now. Most hiring processes haven't caught up to agentic engineering. Companies are still running leetcode challenges and whiteboarding puzzles. But what you actually need in an AI-assisted workflow is the ability to oneshot — to write a prompt so well-specified that the model can execute it cleanly the first time.
+The MenuGen anecdote is more than a joke. It is a clean illustration of the difference between Software 2.0 and Software 3.0.
 
-His interview proposal: give candidates a large project — something like building a Twitter clone — and see how they spec it out. The people who know what they don't know will write better specs. The ones who don't will produce specs that choke on tokens, session length, cookie expiration, rate limiting, and a dozen other things that don't appear in the spec until they break production.
+- **Software 1.0**: Hand-written code. C, Python, Java. Every line intentional.
+- **Software 2.0**: Neural networks trained on data. The behavior emerges.
+- **Software 3.0**: Describe what you want in natural language. AI generates the code. You review the result.
 
-The skill isn't coding. It's knowing how to give the AI something it's actually ready to handle.
+In Software 3.0, the bottleneck is not implementation. It is knowing what to build and whether what was built actually matches what you had in mind. Karpathy put it this way:
 
-## The Bigger Question Nobody Can Answer
+> "You can outsource your thinking but you cannot outsource your understanding."
 
-Toward the end of the interview, the interviewer asks Karpathy what skills will still matter as AI gets better. What should someone actually learn?
+The execution can be delegated. The comprehension cannot.
 
-Karpathy's answer was, by his own admission, empty. He couldn't really answer it.
+---
 
-That should tell you something. If the person who helped invent this technology can't articulate what survives it, the honest answer is: nobody knows yet. The industry is moving too fast, the technology is changing too rapidly, and the downstream effects are too distributed to model.
+## Jagged Intelligence: Brilliant and Catastrophically Stupid in the Same Model
 
-What we do know is this: the code being written by AI right now is in production systems that control real infrastructure, handles real medical data, and makes real decisions about people. And the people deploying it are sometimes having heart attacks when they look at it.
+Karpathy described a specific failure from his MenuGen project. His AI agent was trying to match Stripe customers to Google accounts. It used email addresses as the identifier. This is wrong — email addresses change, get reused, are not persistent user IDs. It is the kind of mistake a first-year engineer would not make.
 
-Whether that's the new normal or a crisis being papered over with TED talks — that's a question worth sitting with.
+The same agent that wrote flawless authentication code had no common sense about identity systems.
+
+This is what Karpathy calls jagged intelligence. Opus 4.7 can refactor a 100,000-line codebase. It will also tell you to walk 50 meters to a car wash instead of driving there. The capability is not uniform. It is concentrated in areas where the labs invested heavily in RL training data, and absent everywhere else.
+
+His term for what happens when you do not account for this: the model makes wrong assumptions on your behalf and runs along with them without checking. It overcomplicates everything.
+
+The failure mode is not random. It is systematically wrong in the places training data is thin.
+
+---
+
+## Vibe Coding vs. Agentic Engineering
+
+Karpathy drew a distinction that is worth being clear about.
+
+**Vibe coding** raises the floor. Anyone can build something. The quality is variable, the reliability is low, but the barrier to entry is gone.
+
+**Agentic engineering** preserves the ceiling. Professionals can build production-quality systems this way, but it requires a completely different workflow — detailed specs, verification at every step, taste and judgment that stays human.
+
+The skill gap between the two is not incremental. Karpathy estimates someone using Claude Code with CLAUDE.md files, skills, subagents, plan mode, and worktree isolation versus someone typing prompts into a chat window is not a 10x difference. It is categorical.
+
+He published his own CLAUDE.md file as a set of four behavioral principles for coding agents. It hit 110,000 GitHub stars in weeks. The rules are simple. The fact that they went viral tells you something about how badly the defaults are broken.
+
+---
+
+## The "Slopacolypse" Prediction
+
+Karpathy has also predicted something he calls the "slopacolypse" — a wave of low-quality, AI-generated code that will hit production systems in 2026. He is not wrong to worry.
+
+A recent analysis found that 45% of AI-generated code contains security vulnerabilities. The tooling has gotten dramatically better at generating code. It has not gotten dramatically better at generating correct, secure, maintainable code. Those are different problems.
+
+There is also the atrophying problem. Karpathy acknowledged that as he relies more on AI to write code, he is starting to lose the ability to write it himself. The muscle that used to be load-bearing is becoming optional. Whether that comes back when needed is an open question.
+
+---
+
+## What This Means for the Rest of Us
+
+If Karpathy — who helped invent this technology, who has been inside the labs, who understands the architecture better than almost anyone — is having heart attacks when he opens pull requests, the average developer using ChatGPT to write a Python script should probably be paying closer attention than they are.
+
+The tools are real. The productivity gains are real. But the quality gap between "it runs" and "it's correct" is not closing on its own. It requires human judgment at every step — not to write the code, but to understand whether the code does what it is supposed to do and nothing it is not supposed to do.
+
+Karpathy's advice for anyone building with these tools: move beyond vibe coding into agentic engineering. Write detailed specs. Review the output not because you have to catch every bug, but because you have to stay in the loop. The moment you stop understanding what your agent is doing, you stop being able to direct it.
+
+The future of software is not a question of whether AI writes the code. It already does. The question is whether anyone is still paying attention to what it wrote.
 
 ---
 
 **Key takeaways:**
 
-- AI-generated code "works" but is frequently "bloaty," "brittle," and "gross" — even by its creator's own admission
-- The real skill in AI-assisted development is writing precise specs, not writing code
-- The hiring process for software engineers hasn't caught up to agentic workflows
-- Even Andre Karpathy can't clearly articulate what skills will remain valuable as AI coding improves
+- Karpathy built MenuGen as a real app; someone replicated it with one prompt. "All of my MenuGen is spurious."
+- His AI agent tried to match Stripe customers to Google accounts using email addresses instead of persistent user IDs — a first-year mistake
+- "Jagged intelligence": AI is brilliant in RL-trained areas and catastrophically stupid everywhere else
+- Vibe coding raises the floor; agentic engineering preserves the ceiling — and the gap between them is categorical, not incremental
+- Karpathy predicts a "slopacolypse" in 2026 as low-quality AI code hits production systems at scale
+- His core principle: "You can outsource your thinking but you cannot outsource your understanding"
 
 ---
 
-*Sources: Andre Karpathy interview (conference appearance, 2026) — via [Vendasta YouTube](https://youtu.be/ZugX7a99dLk)*
+**Sources:**
+- [Sequoia AI Ascent 2026 — Andrej Karpathy: From Vibe Coding to Agentic Engineering](https://www.youtube.com/watch?v=96jN2OCOfLs)
+- [Business Insider: The Man Who Coined Vibe Coding Says AI Code Can Still Be 'Gross'](https://www.businessinsider.com/andrej-karpathy-vibe-coding-ai-code-awkward-gross-needs-humans-2026-4) (April 2026)
+- [Autocomplete AI: Karpathy Killed His Own App on Stage](https://acdigest.substack.com/p/karpathy-killed-his-own-app-on-stage) (May 2026)
+- [Simon Willison: Karpathy quote on programming changing "not gradually but specifically this last December"](https://simonwillison.net/2026/Feb/26/andrej-karpathy/) (February 2026)
+- [Cybernews: Karpathy predicts "slopacolypse"](https://cybernews.com/ai-news/andrej-karpathy-slopacolypse/) (2026)
